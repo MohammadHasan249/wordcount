@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Count</title>
+    <style>
+        body {
+            background-color: #a3297a;
+        }
+    </style>
+</head>
+<body bgcolor="color: blue">
+    <h1>There are {{ wordslist }} words in your text</h1>
+    <br />
+    <a href="{% url 'homepage' %}" style="color: red">New Text</a>
+    <br />
+    <h2>Your Text: </h2>
+    {{ text }}
+    <br />
+    <h2>Word Frequency: </h2>
+    {% for word, count in sortedwords %}
+
+    {{ word }} - {{ count }}
+    <br />
+
+    {% endfor %}
+    <h2>Most Frequently Used Word: </h2>
+    {{ maximum }}
+
+    <h2>Least Frequently Used Word: </h2>
+    {{ minimum }}
+
+</body>
+</html>
